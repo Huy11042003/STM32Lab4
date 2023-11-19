@@ -99,7 +99,7 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-  uint8_t pData[] = "My protocol is getting started...\r\n";
+  uint8_t pData[] = "STM32 Hello users\r\n";
   HAL_Delay(1000);
   HAL_UART_Transmit(&huart2, pData, sizeof(pData), 1000);
   HAL_UART_Receive_IT(&huart2, &temp, 1);
@@ -114,7 +114,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  if (buffer_flag == 1) {
-		  command_parser_fsm();
+		  command_parser();
 		  buffer_flag = 0;
 	  }
 	  uart_communiation_fsm();
